@@ -9,7 +9,8 @@
 #import "GFBlurView.h"
 #import <objc/runtime.h>
 
-#define BLUR_STYLE_KEY    @"blur.style.key"
+#define BLUR_STYLE_KEY      @"blur.style.key"
+#define BLUR_VIEW_KEY       @"blur.view.key"
 
 @implementation UIView (Blur)
 
@@ -37,7 +38,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame blurEffectStyle:(UIBlurEffectStyle)blurStyle {
     if (self = [self initWithFrame:frame]) {
-        
+        self.backgroundColor = [UIColor clearColor];
+        [self installBlurViewWithStyle:blurStyle];
     }
     
     return self;
@@ -53,13 +55,38 @@
     return [number integerValue];
 }
 
-- (void)setBlurStyle:(UIBlurEffectStyle)style {
+- (void)saveBlurStyle:(UIBlurEffectStyle)style {
     NSNumber *number = @(style);
     objc_setAssociatedObject(self, BLUR_STYLE_KEY, number, OBJC_ASSOCIATION_COPY);
 }
 
+- (UIVisualEffectView *)getBlurView {
+    return objc_getAssociatedObject(self, BLUR_VIEW_KEY);
+}
+
+- (void)setBlurView:(UIVisualEffectView *)view {
+    objc_setAssociatedObject(self, BLUR_VIEW_KEY, view, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)installBlurViewWithStyle:(UIBlurEffectStyle)style {
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:style];
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    [self addSubview:blurView];
+    [blurView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+    
+    [self setBlurView:blurView];
+    [self saveBlurStyle:style];
+}
+
 - (void)blurAddSubview:(UIView *)view {
-    [self blurAddSubview:view];
+    if ([self getBlurEnabled]) {
+        [[self getBlurView].contentView addSubview:view];
+    }
+    else {
+        [self blurAddSubview:view];
+    }
 }
 
 @end

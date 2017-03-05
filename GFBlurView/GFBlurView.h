@@ -14,7 +14,9 @@
 - (instancetype)initWithFrame:(CGRect)frame blurEffectStyle:(UIBlurEffectStyle)blurStyle;
 
 - (BOOL)getBlurEnabled;
+
 - (UIBlurEffectStyle)getBlurStyle;
+
 - (void)setBlurStyle:(UIBlurEffectStyle)style;
 
 @end
