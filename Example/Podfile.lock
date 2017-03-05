@@ -1,0 +1,19 @@
+PODS:
+  - GFBlurView (0.1.0):
+    - Masonry
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - GFBlurView (from `../`)
+
+EXTERNAL SOURCES:
+  GFBlurView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GFBlurView: 6a4978a28790a8812f65b645211ca3796f216f1d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: 24bed0c87b25c52b34e89e3d8cbb52eed33cb2cb
+
+COCOAPODS: 1.2.0
