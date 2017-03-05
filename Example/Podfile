@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GFBlurView_Example' do
+  pod 'GFBlurView', :path => '../'
+
+  target 'GFBlurView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
