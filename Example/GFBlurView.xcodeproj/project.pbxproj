@@ -23,6 +23,7 @@
 		8F6ECF721E60D062E40DE93E /* Pods_GFBlurView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F7A6FF34A7D5AD2A8BEAB6 /* Pods_GFBlurView_Tests.framework */; };
 		8F796C4B2C3ABA0DCC5D04B5 /* Pods_GFBlurView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B920DC67D394130956B2C964 /* Pods_GFBlurView_Example.framework */; };
 		AE6B87E61E6C4D3D0030A63E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6B87E51E6C4D3D0030A63E /* LaunchScreen.storyboard */; };
+		AEEB73E61E6D227400DF5FE7 /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEB73E51E6D227400DF5FE7 /* UIView+Image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		7DC6C269621786B9D85C5A9B /* GFBlurView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GFBlurView.podspec; path = ../GFBlurView.podspec; sourceTree = "<group>"; };
 		94F7A6FF34A7D5AD2A8BEAB6 /* Pods_GFBlurView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GFBlurView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6B87E51E6C4D3D0030A63E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AEEB73E41E6D227400DF5FE7 /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
+		AEEB73E51E6D227400DF5FE7 /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
 		B56CCF9339C2235E7BE539B7 /* Pods-GFBlurView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GFBlurView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GFBlurView_Tests/Pods-GFBlurView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B920DC67D394130956B2C964 /* Pods_GFBlurView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GFBlurView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D539E0B1250B791BD1802CE6 /* Pods-GFBlurView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GFBlurView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GFBlurView_Example/Pods-GFBlurView_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				AE6B87E51E6C4D3D0030A63E /* LaunchScreen.storyboard */,
+				AEEB73E41E6D227400DF5FE7 /* UIView+Image.h */,
+				AEEB73E51E6D227400DF5FE7 /* UIView+Image.m */,
 			);
 			name = "Example for GFBlurView";
 			path = GFBlurView;
@@ -395,6 +400,7 @@
 			files = (
 				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* ViewController.m in Sources */,
+				AEEB73E61E6D227400DF5FE7 /* UIView+Image.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

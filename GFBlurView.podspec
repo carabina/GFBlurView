@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GFBlurView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of GFBlurView.'
+  s.summary          = 'A simple tool to give view a blur'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,15 +18,15 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Using UIVisualEffect is some how difficult or complicated, GFBlurView gives you a way to give one view a blur vision
                        DESC
 
-  s.homepage         = 'https://github.com/guofengld@gmail.com/GFBlurView'
+  s.homepage         = 'https://github.com/guofengld/GFBlurView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'guofengld@gmail.com' => 'xgf_nj@viroyal-elec.com' }
-  s.source           = { :git => 'https://github.com/guofengld@gmail.com/GFBlurView.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'guofengld' => 'guofengld@gmail.com' }
+  s.source           = { :git => 'https://github.com/guofengld/GFBlurView.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/guofengld'
 
   s.ios.deployment_target = '8.0'
 

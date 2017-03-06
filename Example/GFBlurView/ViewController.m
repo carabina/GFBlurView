@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <GFBlurView/GFBlurView.h>
+#import "UIView+Image.h"
 
 @interface ViewController ()
 
@@ -18,19 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_main_bg"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:imageView];
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    //set a background image for the view
+    [self.view setImage:[UIImage imageNamed:@"icon_main_bg"]];
     
-    //第一个方块 View
-    UIView *rectView = [[UIView alloc] initWithFrame:CGRectZero blurEffectStyle:UIBlurEffectStyleDark];
+    //The first area initialized directly with blur style and vibrancy
+    UIView *rectView = [[UIView alloc] initWithFrame:CGRectZero
+                                     blurEffectStyle:UIBlurEffectStyleDark
+                                     vibrancyEnabled:YES];
     [self.view addSubview:rectView];
     [rectView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view);
-        make.height.equalTo(rectView.mas_width).multipliedBy(.75);
+        make.height.equalTo(rectView.mas_width).multipliedBy(.66);
         make.centerX.equalTo(self.view);
         make.bottom.equalTo(self.view.mas_centerY);
     }];
@@ -38,33 +37,46 @@
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont systemFontOfSize:38];
     label.textColor = [UIColor whiteColor];
-    label.text = @"测试 Label 01";
+    label.text = @"Testing Label 00";
     [rectView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(rectView);
     }];
     
-    //第二个方块 View
-//    
-//    rectView = [[UIView alloc] initWithFrame:CGRectZero];
-//    [self.view addSubview:rectView];
-//    [rectView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.equalTo(self.view).multipliedBy(.8);
-//        make.height.equalTo(rectView.mas_width);
-//        make.centerX.equalTo(self.view);
-//        make.top.equalTo(self.view.mas_centerY);
-//    }];
-//    
-//    label = [[UILabel alloc] init];
-//    label.font = [UIFont systemFontOfSize:38];
-//    label.textColor = [UIColor whiteColor];
-//    label.text = @"测试 Label 02";
-//    [rectView addSubview:label];
-//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(rectView);
-//    }];
-//    
-//    [rectView setBlurStyle:UIBlurEffectStyleLight];
+    //Then the second area, normally initialized
+    rectView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:rectView];
+    [rectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view);
+        make.height.equalTo(rectView.mas_width).multipliedBy(.66);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view.mas_centerY);
+    }];
+    
+    label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:38];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"Testing Label 10";
+    [rectView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(rectView);
+        make.bottom.equalTo(rectView.mas_centerY);
+    }];
+    
+    //After the area was initialized, we change the blur style of it
+    [rectView setBlurStyle:UIBlurEffectStyleLight
+           vibrancyEnabled:YES];
+    
+    //And continue to add sub view
+    label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:38];
+    label.textColor = [UIColor whiteColor];
+    label.text = @"Testing Label 11";
+    [rectView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(rectView);
+        make.top.equalTo(rectView.mas_centerY);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
