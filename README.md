@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/GFBlurView.svg?style=flat)](http://cocoapods.org/pods/GFBlurView)
 [![Platform](https://img.shields.io/cocoapods/p/GFBlurView.svg?style=flat)](http://cocoapods.org/pods/GFBlurView)
 
+## Screens
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -22,7 +25,7 @@ pod "GFBlurView"
 
 ## Author
 
-guofengld@gmail.com, xgf_nj@viroyal-elec.com
+guofengld@gmail.com
 
 ## License
 
