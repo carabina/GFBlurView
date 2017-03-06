@@ -7,6 +7,7 @@
 
 ## Screens
 
+[![Screen](https://github.com/guofengld/GFBlurView/blob/master/static/screen01.png)]
 
 ## Example
 
